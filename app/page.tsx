@@ -71,13 +71,7 @@ export default function Home() {
           }}
         />
 
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'url("/grid.png")', /* You might want to add a subtle grid or noise texture later */
-          opacity: 0.05,
-          zIndex: 0
-        }} />
+
 
         <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
           <motion.div
