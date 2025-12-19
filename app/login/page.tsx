@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useAuth } from '../context/AuthContext'
 
 export default function LoginPage() {
-    const router = useRouter()
+    const { login } = useAuth()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
@@ -13,10 +13,9 @@ export default function LoginPage() {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
-        // Mock login delay
-        await new Promise(resolve => setTimeout(resolve, 1000))
-        // Navigate to dashboard
-        router.push('/dashboard')
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 800))
+        login(email)
     }
 
     return (

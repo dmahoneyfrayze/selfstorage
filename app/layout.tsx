@@ -3,6 +3,7 @@ import { Playfair_Display, Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { Providers } from './components/Providers'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -38,11 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
       <body>
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <main style={{ paddingTop: 'var(--header-height)' }}>
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

@@ -39,8 +39,7 @@ export default function Home() {
       <motion.section
         ref={targetRef}
         style={{
-          height: '100vh',
-          paddingTop: '80px', // Clear fixed navbar
+          height: 'calc(100vh - var(--header-height))',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
