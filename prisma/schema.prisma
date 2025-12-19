@@ -1,0 +1,42 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Unit {
+  id          String   @id @default(uuid())
+  name        String   // e.g. "A-101"
+  size        String   // e.g. "10x10"
+  price       Float
+  status      String   @default("AVAILABLE") // AVAILABLE, PENDING, OCCUPIED, MAINTENANCE
+  type        String   // e.g. "Climate Controlled", "Standard"
+  description String?
+  bookings    Booking[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Booking {
+  id           String   @id @default(uuid())
+  unitId       String
+  unit         Unit     @relation(fields: [unitId], references: [id])
+  customerEmail String
+  customerName String?
+  ghlContactId String?
+  status       String   @default("PENDING") // PENDING, CONFIRMED, CANCELLED
+  startDate    DateTime @default(now())
+  endDate      DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Waitlist {
+  id        String   @id @default(uuid())
+  email     String
+  unitType  String
+  createdAt DateTime @default(now())
+}

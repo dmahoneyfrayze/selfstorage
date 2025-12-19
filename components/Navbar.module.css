@@ -1,0 +1,65 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    border-bottom: 1px solid var(--border);
+    background: rgba(15, 17, 21, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.logoHighlight {
+    color: var(--primary);
+}
+
+.links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.link {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--text-main);
+}
+
+.cta {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+        /* Todo: Add mobile menu */
+    }
+}
