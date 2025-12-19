@@ -43,15 +43,17 @@ export function UnitsGrid({ initialUnits }: { initialUnits: Unit[] }) {
                         key={type}
                         onClick={() => setFilterType(type)}
                         style={{
-                            padding: '8px 20px',
-                            borderRadius: '20px',
-                            border: type === filterType ? '1px solid var(--primary)' : '1px solid var(--border)',
-                            background: type === filterType ? 'var(--primary)' : 'transparent',
-                            color: type === filterType ? '#000' : 'var(--text-main)',
+                            padding: '10px 24px',
+                            borderRadius: '0px',
+                            border: type === filterType ? '2px solid var(--primary-blue)' : '2px solid #ccc',
+                            background: type === filterType ? 'var(--primary-blue)' : 'transparent',
+                            color: type === filterType ? 'white' : 'var(--text-main)',
                             cursor: 'pointer',
-                            fontWeight: 500,
+                            fontWeight: 600,
                             whiteSpace: 'nowrap',
-                            transition: 'all 0.2s'
+                            transition: 'all 0.2s',
+                            textTransform: 'uppercase',
+                            fontSize: '0.9rem'
                         }}
                     >
                         {type}

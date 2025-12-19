@@ -39,7 +39,8 @@ export default function Home() {
       <motion.section
         ref={targetRef}
         style={{
-          height: '92vh',
+          height: '100vh',
+          paddingTop: '80px', // Clear fixed navbar
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -86,20 +87,20 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} style={{
-              color: 'var(--primary)',
+              color: '#60a5fa', // Lighter blue for dark background
               textTransform: 'uppercase',
               letterSpacing: '0.3em',
               fontWeight: 600,
               fontSize: '0.85rem',
               marginBottom: '1.5rem',
               display: 'block',
-              textShadow: '0 0 20px rgba(212, 175, 55, 0.4)'
+              textShadow: '0 0 20px rgba(96, 165, 250, 0.4)'
             }}>
               Autonomous Self Storage
             </motion.span>
 
             <motion.h1 variants={fadeInUp} style={{
-              fontSize: 'clamp(3.5rem, 8vw, 6rem)',
+              fontSize: 'clamp(2.5rem, 6vw, 6rem)',
               marginBottom: '1.5rem',
               lineHeight: 1,
             }}>
@@ -109,7 +110,7 @@ export default function Home() {
 
             <motion.p variants={fadeInUp} style={{
               fontSize: '1.25rem',
-              color: 'var(--text-muted)',
+              color: '#cbd5e1', // Light gray/blue-ish for better readability on dark
               maxWidth: '640px',
               margin: '0 auto 3rem',
               lineHeight: 1.7
@@ -121,7 +122,12 @@ export default function Home() {
               <Link href="/units" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '1.125rem' }}>
                 Find Your Unit
               </Link>
-              <Link href="/contact" className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '1.125rem' }}>
+              <Link href="/contact" className="btn btn-outline" style={{
+                padding: '16px 40px',
+                fontSize: '1.125rem',
+                borderColor: 'rgba(255,255,255,0.3)',
+                color: 'white'
+              }}>
                 Contact Support
               </Link>
             </motion.div>
@@ -174,7 +180,10 @@ function FeatureCard({ title, description, icon, delay }: { title: string, descr
         padding: '40px',
         borderRadius: '24px',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        background: 'var(--surface-white)',
+        boxShadow: 'var(--shadow-card)',
+        border: '1px solid rgba(0,0,0,0.05)'
       }}
     >
       <div style={{
@@ -183,11 +192,11 @@ function FeatureCard({ title, description, icon, delay }: { title: string, descr
         left: 0,
         width: '100%',
         height: '4px',
-        background: 'linear-gradient(90deg, transparent, var(--primary), transparent)',
+        background: 'linear-gradient(90deg, transparent, var(--primary-blue), transparent)',
         opacity: 0.5
       }} />
       <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>{icon}</div>
-      <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'white' }}>{title}</h3>
+      <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--deep-navy)' }}>{title}</h3>
       <p style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}>{description}</p>
     </motion.div>
   )

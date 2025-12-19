@@ -15,60 +15,64 @@ export function UnitCard({ id, name, size, price, type, status, onBook, onNotify
     const isAvailable = status === 'AVAILABLE';
 
     return (
-        <div style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            transition: 'transform 0.2s, box-shadow 0.2s'
-        }}
+        <div
+            className="card"
+            style={{
+                background: 'var(--surface-white)',
+                border: 'none',
+                borderRadius: 'var(--radius-card)',
+                boxShadow: 'var(--shadow-card)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'transform 0.2s, box-shadow 0.2s'
+            }}
             onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.5)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
             }}
             onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.boxShadow = 'var(--shadow-card)';
             }}
         >
-            <div style={{ padding: '24px', flex: 1 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+            <div style={{ padding: '32px', flex: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
                     <div>
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '4px' }}>{name}</h3>
+                        <h3 style={{ fontSize: '1.75rem', marginBottom: '8px', color: 'var(--deep-navy)', fontFamily: 'var(--font-heading)' }}>{name}</h3>
                         <div style={{
                             display: 'inline-block',
-                            padding: '4px 8px',
-                            borderRadius: '6px',
-                            background: 'rgba(255,255,255,0.05)',
+                            padding: '6px 12px',
+                            borderRadius: '4px',
+                            background: '#f0f0f0',
                             fontSize: '0.85rem',
-                            color: 'var(--text-muted)'
+                            color: 'var(--text-muted)',
+                            fontWeight: 500
                         }}>
                             {type}
                         </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--primary)' }}>${price}</div>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>/month</div>
+                        <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary-blue)' }}>${price}</div>
+                        <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/month</div>
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '24px', marginBottom: '24px' }}>
-                    <div style={{ flex: 1, padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px', textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Size</div>
-                        <div style={{ fontWeight: 600 }}>{size}</div>
+                <div style={{ display: 'flex', gap: '16px', marginBottom: '8px' }}>
+                    <div style={{ flex: 1, padding: '16px', background: '#f8f9fa', borderRadius: '12px', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Size</div>
+                        <div style={{ fontWeight: 600, color: 'var(--deep-navy)', fontSize: '1.1rem' }}>{size}</div>
                     </div>
-                    <div style={{ flex: 1, padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px', textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Status</div>
-                        <div style={{ fontWeight: 600, color: isAvailable ? 'var(--success)' : 'var(--error)' }}>
+                    <div style={{ flex: 1, padding: '16px', background: '#f8f9fa', borderRadius: '12px', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Status</div>
+                        <div style={{ fontWeight: 600, color: isAvailable ? '#10b981' : '#ef4444', fontSize: '1.1rem' }}>
                             {isAvailable ? 'Available' : status}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style={{ padding: '20px', borderTop: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)' }}>
+            <div style={{ padding: '24px 32px 32px 32px', background: 'var(--surface-white)' }}>
                 {isAvailable ? (
                     <button
                         onClick={() => onBook(id)}

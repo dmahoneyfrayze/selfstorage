@@ -57,50 +57,50 @@ export function BookingForm({ unitId, unitPrice }: { unitId: string, unitPrice: 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 <div className="form-group">
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>First Name</label>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: 'var(--deep-navy)' }}>First Name</label>
                     <input
                         type="text"
                         required
                         className="input"
                         value={formData.firstName}
                         onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-                        style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)', color: 'white' }}
+                        style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc', background: '#fff', color: '#333' }}
                     />
                 </div>
                 <div className="form-group">
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Last Name</label>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: 'var(--deep-navy)' }}>Last Name</label>
                     <input
                         type="text"
                         required
                         className="input"
                         value={formData.lastName}
                         onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-                        style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)', color: 'white' }}
+                        style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc', background: '#fff', color: '#333' }}
                     />
                 </div>
             </div>
 
             <div className="form-group">
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Email Address</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: 'var(--deep-navy)' }}>Email Address</label>
                 <input
                     type="email"
                     required
                     className="input"
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)', color: 'white' }}
+                    style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc', background: '#fff', color: '#333' }}
                 />
             </div>
 
             <div className="form-group">
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Phone Number</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: 'var(--deep-navy)' }}>Phone Number</label>
                 <input
                     type="tel"
                     required
                     className="input"
                     value={formData.phone}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                    style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)', color: 'white' }}
+                    style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc', background: '#fff', color: '#333' }}
                 />
             </div>
 

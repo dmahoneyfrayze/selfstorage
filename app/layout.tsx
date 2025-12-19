@@ -1,7 +1,21 @@
 import type { Metadata } from 'next'
+import { Playfair_Display, Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
+
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Gordon Self Storage | Autonomous Units in Rosslyn & Thunder Bay',
@@ -15,13 +29,14 @@ export const metadata: Metadata = {
   },
 }
 
+// forcing rebuild
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
       <body>
         <Navbar />
         <main>
