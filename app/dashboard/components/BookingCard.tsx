@@ -35,8 +35,8 @@ export function BookingCard({ booking }: { booking: any }) {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
                 <div>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>Size</div>
-                    <div style={{ fontSize: '1.1rem', fontWeight: 600 }}>{booking.unit.size}</div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '4px', fontWeight: 600 }}>Size</div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--deep-navy)' }}>{booking.unit.size}</div>
                 </div>
                 <div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>Monthly Rate</div>

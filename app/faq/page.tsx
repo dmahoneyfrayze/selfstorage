@@ -32,7 +32,7 @@ export default function FAQPage() {
                     transition={{ duration: 0.6 }}
                     style={{ maxWidth: '800px', margin: '0 auto' }}
                 >
-                    <h1 className="text-gradient" style={{ marginBottom: '24px', textAlign: 'center' }}>Frequently Asked Questions</h1>
+                    <h1 style={{ marginBottom: '24px', textAlign: 'center', color: 'var(--deep-navy)' }}>Frequently Asked Questions</h1>
                     <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginBottom: '60px', fontSize: '1.25rem' }}>
                         Everything you need to know about Gordon Self Storage.
                     </p>
@@ -61,7 +61,7 @@ function FAQItem({ question, answer, delay }: { question: string, answer: string
             onClick={() => setIsOpen(!isOpen)}
         >
             <div style={{ padding: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.25rem', color: 'white', margin: 0 }}>{question}</h3>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--deep-navy)', margin: 0 }}>{question}</h3>
                 <span style={{
                     color: 'var(--primary)',
                     fontSize: '1.5rem',

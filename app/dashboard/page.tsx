@@ -11,8 +11,8 @@ export default async function DashboardPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <header style={{ marginBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'end' }}>
                 <div>
-                    <h1 style={{ fontSize: '2rem', marginBottom: '8px' }}>My Units</h1>
-                    <p style={{ color: 'var(--text-muted)' }}>Manage your access and active rentals</p>
+                    <h1 style={{ fontSize: '2rem', marginBottom: '8px', color: 'var(--deep-navy)' }}>My Units</h1>
+                    <p style={{ color: 'var(--text-secondary)' }}>Manage your access and active rentals</p>
                 </div>
                 <Link href="/dashboard/rent-unit" className="btn btn-primary">
                     + Add Unit
@@ -64,8 +64,8 @@ export default async function DashboardPage() {
                     }}
                 >
                     <span style={{ fontSize: '1.5rem' }}>🚛</span>
-                    <span style={{ fontWeight: 600 }}>Transport / Moving</span>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Request loading help</span>
+                    <span style={{ fontWeight: 600, color: 'var(--deep-navy)' }}>Transport / Moving</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Request loading help</span>
                 </Link>
 
                 <Link

@@ -60,7 +60,7 @@ export function UnitCard({ id, name, size, price, type, status, onBook, onNotify
 
                 <div style={{ display: 'flex', gap: '16px', marginBottom: '8px' }}>
                     <div style={{ flex: 1, padding: '16px', background: '#f8f9fa', borderRadius: '12px', textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Size</div>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 600 }}>Size</div>
                         <div style={{ fontWeight: 600, color: 'var(--deep-navy)', fontSize: '1.1rem' }}>{size}</div>
                     </div>
                     <div style={{ flex: 1, padding: '16px', background: '#f8f9fa', borderRadius: '12px', textAlign: 'center' }}>

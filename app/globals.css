@@ -9,6 +9,9 @@
   --surface-white: #FFFFFF;
   --text-main: #111111;
   --text-muted: #555555;
+  /* Ensuring this is dark enough */
+  --text-secondary: #374151;
+  /* Dark gray for subheaders */
   --text-inverted: #FFFFFF;
 
   /* Fonts */
