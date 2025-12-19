@@ -1,8 +1,19 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
+import { joinWaitlist } from '../actions'
 
 export default function Footer() {
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
+
+    async function handleSubmit(formData: FormData) {
+        setStatus('submitting')
+        await joinWaitlist(formData)
+        setStatus('success')
+        setTimeout(() => setStatus('idle'), 3000)
+    }
+
     return (
         <footer style={{
             background: 'var(--deep-navy)',
@@ -14,8 +25,8 @@ export default function Footer() {
             <div className="container">
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '60px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '40px',
                     marginBottom: '60px'
                 }}>
                     {/* Brand Column */}
@@ -71,6 +82,46 @@ export default function Footer() {
                                 Visit Main Site →
                             </a>
                         </div>
+                    </div>
+
+                    {/* Waitlist - Now in grid */}
+                    <div>
+                        <h4 style={{ fontSize: '1.1rem', marginBottom: '24px', fontWeight: 600, color: 'white' }}>Stay Updated</h4>
+                        <p style={{ color: '#ccc', marginBottom: '16px', fontSize: '0.9rem' }}>
+                            Join our waitlist to get notified when new units become available.
+                        </p>
+
+                        {status === 'success' ? (
+                            <div style={{ padding: '12px', background: 'rgba(16, 185, 129, 0.1)', color: '#34d399', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                                ✓ You're on the list!
+                            </div>
+                        ) : (
+                            <form action={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    required
+                                    style={{
+                                        padding: '12px',
+                                        borderRadius: '4px',
+                                        border: '1px solid rgba(255,255,255,0.2)',
+                                        background: 'rgba(255,255,255,0.05)',
+                                        color: 'white',
+                                        outline: 'none',
+                                        fontSize: '0.9rem'
+                                    }}
+                                />
+                                <button
+                                    type="submit"
+                                    disabled={status === 'submitting'}
+                                    className="btn btn-primary"
+                                    style={{ width: '100%', fontSize: '0.9rem', padding: '10px' }}
+                                >
+                                    {status === 'submitting' ? 'Joining...' : 'Join Waitlist'}
+                                </button>
+                            </form>
+                        )}
                     </div>
                 </div>
 

@@ -139,3 +139,13 @@ export async function updatePaymentMethod(formData: FormData) {
     revalidatePath('/dashboard/billing')
     return { success: true }
 }
+
+export async function joinWaitlist(formData: FormData) {
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    const email = formData.get('email')
+    console.log('Waitlist Join (MOCK):', { email })
+
+    return { success: true, message: "You've been added to the waitlist!" }
+}
