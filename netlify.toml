@@ -3,4 +3,4 @@
   publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "22"
+  DATABASE_URL = "file:./dev.db"
